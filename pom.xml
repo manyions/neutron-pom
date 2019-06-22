@@ -6,11 +6,11 @@
 
     <groupId>com.manyions</groupId>
     <artifactId>neutron-pom</artifactId>
-    <version>0.0.1</version>
+    <version>0.0.2</version>
     <packaging>pom</packaging>
 
     <name>Many Ions : Neutron POM</name>
-    <description>Maven Super POM to centralize configuration for open source contributions by Many Ions .</description>
+    <description>Maven Super POM to centralize configuration for open source contributions by Many Ions.</description>
     <url>https://www.manyions.com</url>
 
     <licenses>
@@ -122,6 +122,8 @@
     </dependencyManagement>
 
     <scm>
+        <connection>scm:git:git://github.com/manyions/neutron-pom.git</connection>
+        <developerConnection>scm:git:ssh://github.com:manyions/neutron-pom.git</developerConnection>
         <url>https://github.com/manyions/neutron-pom.git</url>
     </scm>
 </project>
