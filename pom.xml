@@ -6,7 +6,7 @@
 
     <groupId>com.manyions</groupId>
     <artifactId>neutron-pom</artifactId>
-    <version>0.0.3</version>
+    <version>0.0.4</version>
     <packaging>pom</packaging>
 
     <name>Many Ions : Neutron POM</name>
@@ -44,6 +44,7 @@
         <maven.resources.plugin.version>2.6</maven.resources.plugin.version>
         <mockito.core.version>2.28.2</mockito.core.version>
         <powermock.module.junit4.version>2.0.2</powermock.module.junit4.version>
+        <selenium.java.version>3.141.59</selenium.java.version>
         <slf4j.api.version>1.7.26</slf4j.api.version>
         <spring.boot.version>2.1.6.RELEASE</spring.boot.version>
         <spring.framework.version>1.5.3.RELEASE</spring.framework.version>
@@ -122,6 +123,12 @@
                 <groupId>org.powermock</groupId>
                 <artifactId>powermock-module-junit4</artifactId>
                 <version>${powermock.module.junit4.version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>org.seleniumhq.selenium</groupId>
+                <artifactId>selenium-java</artifactId>
+                <version>${selenium.java.version}</version>
             </dependency>
 
             <dependency>
