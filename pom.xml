@@ -49,6 +49,7 @@
         <spring.boot.version>2.1.6.RELEASE</spring.boot.version>
         <spring.framework.version>1.5.3.RELEASE</spring.framework.version>
         <tomcat.jasper.version>9.0.21</tomcat.jasper.version>
+        <wro4j.maven.plugin.version>1.8.0</wro4j.maven.plugin.version>
     </properties>
 
     <dependencyManagement>
@@ -141,6 +142,12 @@
                 <groupId>org.springframework.boot</groupId>
                 <artifactId>spring-boot</artifactId>
                 <version>${spring.boot.version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>ro.isdc.wro4j</groupId>
+                <artifactId>wro4j-maven-plugin</artifactId>
+                <version>${wro4j.maven.plugin.version}</version>
             </dependency>
         </dependencies>
     </dependencyManagement>
