@@ -157,4 +157,14 @@
         <developerConnection>scm:git:ssh://github.com:manyions/neutron-pom.git</developerConnection>
         <url>https://github.com/manyions/neutron-pom.git</url>
     </scm>
+
+    <profiles>
+        <profile>
+            <id>maven-central-deploy</id>
+
+            <activation>
+                <activeByDefault>false</activeByDefault>
+            </activation>
+        </profile>
+    </profiles>
 </project>
