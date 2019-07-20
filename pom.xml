@@ -41,6 +41,7 @@
         <junit.jupiter.api.version>5.4.2</junit.jupiter.api.version>
         <junit.version>4.12</junit.version>
         <logback.classic.version>1.2.3</logback.classic.version>
+        <maven.gpg.plugin.version>1.6</maven.gpg.plugin.version>
         <maven.resources.plugin.version>2.6</maven.resources.plugin.version>
         <mockito.core.version>2.28.2</mockito.core.version>
         <powermock.module.junit4.version>2.0.2</powermock.module.junit4.version>
@@ -165,6 +166,27 @@
             <activation>
                 <activeByDefault>false</activeByDefault>
             </activation>
+
+            <build>
+                <plugins>
+                    <plugin>
+                        <groupId>org.apache.maven.plugins</groupId>
+                        <artifactId>maven-gpg-plugin</artifactId>
+                        <version>${maven.gpg.plugin.version}</version>
+
+                        <executions>
+                            <execution>
+                                <id>sign-artifacts</id>
+                                <phase>verify</phase>
+
+                                <goals>
+                                    <goal>sign</goal>
+                                </goals>
+                            </execution>
+                        </executions>
+                    </plugin>
+                </plugins>
+            </build>
         </profile>
     </profiles>
 </project>
