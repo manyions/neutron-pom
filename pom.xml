@@ -6,7 +6,7 @@
 
     <groupId>com.manyions</groupId>
     <artifactId>neutron-pom</artifactId>
-    <version>0.0.4</version>
+    <version>0.0.4-SNAPSHOT</version>
     <packaging>pom</packaging>
 
     <name>Many Ions : Neutron POM</name>
