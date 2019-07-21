@@ -21,6 +21,23 @@
         </license>
     </licenses>
 
+    <developers>
+        <developer>
+            <id>anyion</id>
+            <name>Many Ions</name>
+            <email>anyion@manyions.com</email>
+
+            <organization>Many Ions</organization>
+            <organizationUrl>https://www.manyions.com</organizationUrl>
+
+            <roles>
+                <role>owner</role>
+                <role>architect</role>
+                <role>developer</role>
+            </roles>
+        </developer>
+    </developers>
+
     <scm>
         <connection>scm:git:git://github.com/manyions/neutron-pom.git</connection>
         <developerConnection>scm:git:ssh://github.com:manyions/neutron-pom.git</developerConnection>
