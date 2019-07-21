@@ -21,6 +21,12 @@
         </license>
     </licenses>
 
+    <scm>
+        <connection>scm:git:git://github.com/manyions/neutron-pom.git</connection>
+        <developerConnection>scm:git:ssh://github.com:manyions/neutron-pom.git</developerConnection>
+        <url>https://github.com/manyions/neutron-pom</url>
+    </scm>
+
     <properties>
         <!-- System configuration properties -->
         <java.version>1.8</java.version>
@@ -155,12 +161,6 @@
             </dependency>
         </dependencies>
     </dependencyManagement>
-
-    <scm>
-        <connection>scm:git:git://github.com/manyions/neutron-pom.git</connection>
-        <developerConnection>scm:git:ssh://github.com:manyions/neutron-pom.git</developerConnection>
-        <url>https://github.com/manyions/neutron-pom</url>
-    </scm>
 
     <profiles>
         <profile>
