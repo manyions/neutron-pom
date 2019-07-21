@@ -21,6 +21,29 @@
         </license>
     </licenses>
 
+    <developers>
+        <developer>
+            <id>anyion</id>
+            <name>Many Ions</name>
+            <email>anyion@manyions.com</email>
+
+            <organization>Many Ions</organization>
+            <organizationUrl>https://www.manyions.com</organizationUrl>
+
+            <roles>
+                <role>owner</role>
+                <role>architect</role>
+                <role>developer</role>
+            </roles>
+        </developer>
+    </developers>
+
+    <scm>
+        <connection>scm:git:git://github.com/manyions/neutron-pom.git</connection>
+        <developerConnection>scm:git:ssh://github.com:manyions/neutron-pom.git</developerConnection>
+        <url>https://github.com/manyions/neutron-pom</url>
+    </scm>
+
     <properties>
         <!-- System configuration properties -->
         <java.version>1.8</java.version>
@@ -41,7 +64,11 @@
         <junit.jupiter.api.version>5.4.2</junit.jupiter.api.version>
         <junit.version>4.12</junit.version>
         <logback.classic.version>1.2.3</logback.classic.version>
+        <maven.gpg.plugin.version>1.6</maven.gpg.plugin.version>
+        <maven.javadoc.plugin.version>3.1.0</maven.javadoc.plugin.version>
         <maven.resources.plugin.version>2.6</maven.resources.plugin.version>
+        <maven.source.plugin.version>3.1.0</maven.source.plugin.version>
+        <nexus.staging.maven.plugin.version>1.6.8</nexus.staging.maven.plugin.version>
         <mockito.core.version>2.28.2</mockito.core.version>
         <powermock.module.junit4.version>2.0.2</powermock.module.junit4.version>
         <selenium.java.version>3.141.59</selenium.java.version>
@@ -152,9 +179,84 @@
         </dependencies>
     </dependencyManagement>
 
-    <scm>
-        <connection>scm:git:git://github.com/manyions/neutron-pom.git</connection>
-        <developerConnection>scm:git:ssh://github.com:manyions/neutron-pom.git</developerConnection>
-        <url>https://github.com/manyions/neutron-pom.git</url>
-    </scm>
+    <profiles>
+        <profile>
+            <id>maven-central-deploy</id>
+
+            <activation>
+                <activeByDefault>false</activeByDefault>
+            </activation>
+
+            <distributionManagement>
+                <snapshotRepository>
+                    <id>ossrh</id>
+                    <url>https://oss.sonatype.org/content/repositories/snapshots</url>
+                </snapshotRepository>
+            </distributionManagement>
+
+            <build>
+                <plugins>
+                    <plugin>
+                        <groupId>org.apache.maven.plugins</groupId>
+                        <artifactId>maven-gpg-plugin</artifactId>
+                        <version>${maven.gpg.plugin.version}</version>
+
+                        <executions>
+                            <execution>
+                                <id>sign-artifacts</id>
+                                <phase>verify</phase>
+
+                                <goals>
+                                    <goal>sign</goal>
+                                </goals>
+                            </execution>
+                        </executions>
+                    </plugin>
+
+                    <plugin>
+                        <groupId>org.apache.maven.plugins</groupId>
+                        <artifactId>maven-javadoc-plugin</artifactId>
+                        <version>${maven.javadoc.plugin.version}</version>
+
+                        <executions>
+                            <execution>
+                                <id>attach-javadocs</id>
+                                <goals>
+                                    <goal>jar</goal>
+                                </goals>
+                            </execution>
+                        </executions>
+                    </plugin>
+
+                    <plugin>
+                        <groupId>org.apache.maven.plugins</groupId>
+                        <artifactId>maven-source-plugin</artifactId>
+                        <version>${maven.source.plugin.version}</version>
+
+                        <executions>
+                            <execution>
+                                <id>attach-sources</id>
+                                <goals>
+                                    <goal>jar-no-fork</goal>
+                                </goals>
+                            </execution>
+                        </executions>
+                    </plugin>
+
+                    <plugin>
+                        <groupId>org.sonatype.plugins</groupId>
+                        <artifactId>nexus-staging-maven-plugin</artifactId>
+                        <version>${nexus.staging.maven.plugin.version}</version>
+                        <extensions>true</extensions>
+
+                        <configuration>
+                            <serverId>ossrh</serverId>
+                            <nexusUrl>https://oss.sonatype.org/</nexusUrl>
+                            <autoReleaseAfterClose>false</autoReleaseAfterClose>
+                        </configuration>
+                    </plugin>
+                </plugins>
+            </build>
+        </profile>
+    </profiles>
 </project>
