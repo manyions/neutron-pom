@@ -159,7 +159,7 @@
     <scm>
         <connection>scm:git:git://github.com/manyions/neutron-pom.git</connection>
         <developerConnection>scm:git:ssh://github.com:manyions/neutron-pom.git</developerConnection>
-        <url>https://github.com/manyions/neutron-pom.git</url>
+        <url>https://github.com/manyions/neutron-pom</url>
     </scm>
 
     <profiles>
