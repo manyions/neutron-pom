@@ -231,6 +231,7 @@
                         <artifactId>nexus-staging-maven-plugin</artifactId>
                         <version>${nexus.staging.maven.plugin.version}</version>
                         <extensions>true</extensions>
+
                         <configuration>
                             <serverId>ossrh</serverId>
                             <nexusUrl>https://oss.sonatype.org/</nexusUrl>
