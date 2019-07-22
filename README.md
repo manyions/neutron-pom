@@ -127,3 +127,12 @@ option. To do this, add the following snippet to your project's pom.xml.
     </build>
 </profile>
 ```
+
+## Versioning
+
+We use [SemVer](http://semver.org/) for versioning Maven projects. For the versions available, see the 
+[tags on this repository](https://github.com/manyions/neutron-pom/tags).
+
+## License
+
+This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details
