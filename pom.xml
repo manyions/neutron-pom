@@ -10,7 +10,7 @@
     <packaging>pom</packaging>
 
     <name>Many Ions : Neutron POM</name>
-    <description>Maven Super POM to centralize configuration for open source contributions by Many Ions.</description>
+    <description>Maven parent POM to centralize configuration for open source contributions by Many Ions.</description>
     <url>https://www.manyions.com</url>
 
     <licenses>
@@ -194,6 +194,10 @@
                 </snapshotRepository>
             </distributionManagement>
 
+            <properties>
+                <nexus.staging.maven.plugin.autoReleaseAfterClose>false</nexus.staging.maven.plugin.autoReleaseAfterClose>
+            </properties>
+
             <build>
                 <plugins>
                     <plugin>
@@ -252,7 +256,7 @@
                         <configuration>
                             <serverId>ossrh</serverId>
                             <nexusUrl>https://oss.sonatype.org/</nexusUrl>
-                            <autoReleaseAfterClose>false</autoReleaseAfterClose>
+                            <autoReleaseAfterClose>${nexus.staging.maven.plugin.autoReleaseAfterClose}</autoReleaseAfterClose>
                         </configuration>
                     </plugin>
                 </plugins>
