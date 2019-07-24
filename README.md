@@ -6,14 +6,14 @@ management for many commonly used libraries.
 It also provides a profile, maven-central-deploy, which handles all the additional build steps required for deploying to 
 Sonatype's OSS Repository Hosting, via the Nexus staging plugin.
 
-##Prerequisites
+## Prerequisites
 
 * [Java](https://adoptopenjdk.net/) - at least 1.8 is required. AdoptOpenJDK is recommended for its LTS extended support.
 * [Maven](https://maven.apache.org/) - at least version 3 is required
 * [GnuPG](https://central.sonatype.org/pages/working-with-pgp-signatures.html) - used to cryptographically sign the build artifacts
 * [Jira account at Sonatype](https://central.sonatype.org/pages/ossrh-guide.html#initial-setup) - used to access the OSS Repository Hosting
 
-###Maven User Configuration
+### Maven User Configuration
 ~/.m2/settings.xml
 
 This example shows the necessary server and profile configuration required for deployment to the staging repo.  Your 
@@ -53,7 +53,7 @@ passwords, [Maven Password Encryption](https://maven.apache.org/guides/mini/guid
 </settings>
 ```    
 
-##Usage
+## Usage
 To use this as your project's parent POM, include this snippet in your project's pom.xml. 
 ```
 <parent>
@@ -63,7 +63,7 @@ To use this as your project's parent POM, include this snippet in your project's
 </parent>
 ```
 
-##Deployment
+## Deployment
 
 To fully prepare and deploy your project's artifact to Maven Central's staging repo, use this command when building the artifact.
 ```
@@ -75,7 +75,7 @@ the passphrase is entered, the artifacts are signed and deployed to the staging 
 
 The Nexus Staging plugin's autoReleaseAfterClose parameter is set to false, so releases from the staging repo require manual approval.
 
-##Automating Deployment Steps
+## Automating Deployment Steps
 
 In order to release artifacts automatically from the staging repo, instead of having to manually review, define this in
 the properties element of your project's pom.xml
