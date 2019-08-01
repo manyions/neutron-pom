@@ -6,7 +6,7 @@
 
     <groupId>com.manyions</groupId>
     <artifactId>neutron-pom</artifactId>
-    <version>0.0.5-SNAPSHOT</version>
+    <version>${revision}</version>
     <packaging>pom</packaging>
 
     <name>Many Ions : Neutron POM</name>
@@ -45,6 +45,9 @@
     </scm>
 
     <properties>
+        <!-- CI-friendly versioning properties -->
+        <revision>0.0.5-SNAPSHOT</revision>
+
         <!-- System configuration properties -->
         <java.version>1.8</java.version>
 
